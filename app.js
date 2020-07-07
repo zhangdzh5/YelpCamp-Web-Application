@@ -16,7 +16,14 @@ const express 				= require("express"),
 	  campgroundRoutes		= require("./routes/campgrounds"),
 	  indexRoutes			= require("./routes/index");
 
-mongoose.connect("mongodb://localhost:27017/yelp_camp_v12",{useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect("mongodb+srv://dzhang40:Beckham0701@cluster0.20nzi.mongodb.net/<dbname>?retryWrites=true&w=majority",{
+	userNewUrlParser: true,
+	userCreateIndex: true
+}).then(()=> {
+	console.log("Connected to DB!");
+}).catch(err => {
+	console.log("ERROR: ", err.message);
+});
 
 // seedDB();
 	
