@@ -16,7 +16,9 @@ const express 				= require("express"),
 	  campgroundRoutes		= require("./routes/campgrounds"),
 	  indexRoutes			= require("./routes/index");
 
-mongoose.connect("mongodb+srv://dzhang40:Beckham0701@cluster0.20nzi.mongodb.net/<dbname>?retryWrites=true&w=majority",{
+const databaseUrl = process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp_v12";
+
+mongoose.connect(databaseUrl,{
 	userNewUrlParser: true,
 	userCreateIndex: true
 }).then(()=> {
