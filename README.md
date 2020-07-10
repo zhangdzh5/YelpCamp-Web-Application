@@ -7,11 +7,12 @@ YelpCamp is a website application that mainly focuses on campgrounds, users can 
 This application is hosted on Heroku and can be accessed with the following link:  
 [https://enigmatic-shore-43824.herokuapp.com/](https://enigmatic-shore-43824.herokuapp.com/)
 
-## Functions
+## Features
 * Everyone can view the campgrounds' information and corresponding reviews and comments with/without logging in.
 * After logging in, users can edit their campgrounds detail or any comments.
 * Users only have the permission to edit/delete the campgrounds and comments added by themselves.
 * All campgrounds, comments and users data will be persistent and will be stored in the MongoDB database hosted by Amazon cloud.
+* Users can search for the campgrounds they want by using fuzzy search.
 
 ## Technologies
 * __HTML5__ - markup language used for structuring and presenting content for web applications and web pages.
