@@ -10,28 +10,28 @@ router.get("/", function(req, res){
 
 
 
-// SIGN UP
+// show register form
 router.get("/register", function(req, res){
-	res.render("register");
+   res.render("register", {page: 'register'}); 
 });
 
 //handling user sign up
 router.post("/register", function(req, res){
 	User.register(new User({username: req.body.username}), req.body.password, function(err, user){
 		if(err){
-			req.flash("error", err.message);
-			return res.render("register");
+    		console.log(err);
+    		return res.render("register", {error: err.message}); // To fix the flash message issue
 		}
 		passport.authenticate("local")(req, res, function(){
-			req.flash("success", "Welcome to YelpCamp " + user.username);
+			req.flash("success", "Welcome to YelpCamp, " + user.username + "!");
 			res.redirect("/campgrounds");
 		});
 	});
 });
 
-// LOG IN
+//show login form
 router.get("/login", function(req, res){
-	res.render("login");
+   res.render("login", {page: 'login'}); 
 });
 //login logic
 //middleware
@@ -48,7 +48,7 @@ router.post("/login", passport.authenticate("local", {
 // LOG OUT
 router.get("/logout", function(req, res){
 	req.logout();
-	req.flash("success", "Logged you out!");
+	req.flash("success", "You have logged out!");
 	res.redirect("/campgrounds");
 });
 
