@@ -18,6 +18,7 @@ const express 				= require("express"),
 
 const databaseUrl = process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp_v12";
 
+// connect to the cloud database
 mongoose.connect(databaseUrl,{
 	userNewUrlParser: true,
 	userCreateIndex: true
