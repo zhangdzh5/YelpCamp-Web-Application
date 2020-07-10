@@ -20,8 +20,9 @@ const databaseUrl = process.env.DATABASEURL || "mongodb://localhost:27017/yelp_c
 
 // connect to the cloud database
 mongoose.connect(databaseUrl,{
-	userNewUrlParser: true,
-	userCreateIndex: true
+	useNewUrlParser: true,
+	useCreateIndex: true,
+	useUnifiedTopology: true
 }).then(()=> {
 	console.log("Connected to DB!");
 }).catch(err => {

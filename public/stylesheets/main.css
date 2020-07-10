@@ -9,3 +9,8 @@
 .delete-form {
 	display: inline;
 }
+
+.glyphicon {
+	top: 5px;
+	padding-right: 2px;
+}
