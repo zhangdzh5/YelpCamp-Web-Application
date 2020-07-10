@@ -16,6 +16,9 @@ const express 				= require("express"),
 	  campgroundRoutes		= require("./routes/campgrounds"),
 	  indexRoutes			= require("./routes/index");
 
+//require moment.js
+app.locals.moment = require("moment");
+
 const databaseUrl = process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp_v12";
 
 // connect to the cloud database
